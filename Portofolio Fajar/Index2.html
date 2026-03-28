@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fajar Portfolio Ultra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+    body{background:#0a0a0f;color:#fff;overflow-x:hidden;cursor:none}.glass{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  box-shadow:0 0 30px rgba(168,85,247,0.2);
+}
+
+nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:rgba(0,0,0,0.3);backdrop-filter:blur(15px);z-index:1000}
+nav h1{color:#a855f7}
+nav ul{display:flex;gap:20px;list-style:none}
+nav ul li{cursor:pointer}
+nav ul li:hover{color:#a855f7}
+
+section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 20px}
+
+.hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;justify-content:center}
+.text{max-width:400px}
+.text h1{font-size:2.5rem}
+.text span{color:#a855f7}
+
+.btn{margin-top:20px;padding:12px 25px;border:none;border-radius:30px;background:linear-gradient(45deg,#a855f7,#6366f1);color:white;cursor:pointer;transition:0.3s}
+.btn:hover{transform:scale(1.1);box-shadow:0 0 20px #a855f7}
+
+.photo-box{width:250px;height:300px;perspective:1000px}
+.photo{width:100%;height:100%;border-radius:20px;background-size:cover;background-position:center;transition:0.3s;box-shadow:0 0 30px rgba(168,85,247,0.4)}
+
+.about,.contact{max-width:900px;text-align:center;padding:30px}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px;width:100%}
+.skill{padding:20px;border-radius:15px;background:#111;transition:.3s}
+.skill:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 0 20px #a855f7}
+
+.fade{opacity:0;transform:translateY(20px);transition:1s}
+.fade.show{opacity:1;transform:translateY(0)}
+
+#particles{position:fixed;width:100%;height:100%;z-index:-1}
+.cursor{width:15px;height:15px;border-radius:50%;background:#a855f7;position:fixed;pointer-events:none;transform:translate(-50%,-50%);box-shadow:0 0 15px #a855f7;z-index:9999}
+
+  </style>
+</head>
+<body><canvas id="particles"></canvas>
+
+<div class="cursor" id="cursor"></div><nav>
+  <h1>Fajarr</h1>
+  <ul>
+    <li onclick="scrollToSection('home')">Home</li>
+    <li onclick="scrollToSection('about')">About</li>
+    <li onclick="scrollToSection('skills')">Skills</li>
+    <li onclick="scrollToSection('contact')">Contact</li>
+  </ul>
+</nav><section id="home" class="hero fade">
+  <div class="text">
+    <h1>Helo, I'm <span id="typing"></span></h1>
+    <p>CEO PT Fajarsifara | Creative Developer</p>
+    <button class="btn" onclick="scrollToSection('contact')">Contact Me</button>
+  </div>
+  <div class="photo-box" id="photoBox">
+    <div class="photo" id="photo" style="background-image:url('foto.jpg')"></div>
+  </div>
+</section><section id="about" class="fade">
+  <div class="glass" style="display:flex;flex-direction:column;gap:20px;max-width:900px;padding:40px;text-align:left">
+    <h2 style="color:#a855f7;font-size:2rem">About Me</h2>
+    <p style="color:#ccc;line-height:1.8">Saya adalah <b>CEO PT Fajarsifara</b> yang berfokus pada pengembangan teknologi digital modern. Saya memiliki minat besar dalam <b>UI/UX Design</b>, pengembangan website interaktif, serta membangun sistem digital yang elegan, cepat, dan scalable.</p>
+    <p style="color:#aaa;line-height:1.8">Fokus utama saya adalah menciptakan pengalaman digital yang tidak hanya berfungsi, tetapi juga memiliki nilai estetika tinggi dan kesan premium.</p>
+  </div>
+</section><section id="skills" class="fade">
+  <div style="max-width:1000px;width:100%">
+    <h2 style="color:#a855f7;margin-bottom:30px;text-align:center;font-size:2rem">Skills</h2>
+    <div class="skills">
+      <div class="skill glass"><h3>Frontend</h3><p style="color:#aaa;font-size:0.9rem">HTML, CSS, JavaScript</p></div>
+      <div class="skill glass"><h3>UI/UX</h3><p style="color:#aaa;font-size:0.9rem">Design Modern & Clean Interface</p></div>
+      <div class="skill glass"><h3>Branding</h3><p style="color:#aaa;font-size:0.9rem">Identity & Visual Concept</p></div>
+      <div class="skill glass"><h3>Business</h3><p style="color:#aaa;font-size:0.9rem">Entrepreneur & Strategy</p></div>
+      <div class="skill glass"><h3>System Dev</h3><p style="color:#aaa;font-size:0.9rem">Web & Digital System</p></div>
+      <div class="skill glass"><h3>Creative</h3><p style="color:#aaa;font-size:0.9rem">Innovation & Ideas</p></div>
+    </div>
+  </div>
+</section><section id="contact" class="fade">
+  <div class="glass" style="max-width:800px;margin:0 auto;padding:40px;display:flex;flex-direction:column;gap:25px;align-items:center;text-align:center">
+    <h2 style="color:#a855f7;font-size:2rem">Contact Me</h2>
+    <p style="color:#ccc;line-height:1.6">Hubungi saya melalui WhatsApp atau Instagram. Saya selalu siap untuk kolaborasi, proyek baru, atau sekadar ngobrol soal teknologi dan inovasi.</p>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center">
+      <a href="https://wa.me/6283130125535" target="_blank"><button class="btn">WhatsApp</button></a>
+      <a href="https://instagram.com/telorr_gulunh" target="_blank"><button class="btn">Instagram</button></a>
+    </div>
+    <p style="color:#aaa;font-size:0.9rem;margin-top:10px">© 2026 Fajarr Ultra</p>
+  </div>
+</section><script>
+  function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+
+  const text="Fajarr";let i=0;function typing(){if(i<text.length){document.getElementById('typing').innerHTML+=text[i];i++;setTimeout(typing,120)}}
+  typing();
+
+  const faders=document.querySelectorAll('.fade');
+  const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show')})});
+  faders.forEach(el=>obs.observe(el));
+
+  const cursor=document.getElementById('cursor');
+  document.addEventListener('mousemove',e=>{cursor.style.top=e.clientY+'px';cursor.style.left=e.clientX+'px'});
+
+  const canvas=document.getElementById('particles');
+  const ctx=canvas.getContext('2d');
+  canvas.width=innerWidth;canvas.height=innerHeight;
+  let particles=[];for(let i=0;i<60;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:1+Math.random()*2,v:0.5})}
+  function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='#a855f7';ctx.fill();p.y+=p.v;if(p.y>canvas.height)p.y=0});requestAnimationFrame(draw)}
+  draw();
+
+  const box=document.getElementById('photoBox');
+  const photo=document.getElementById('photo');
+  box.addEventListener('mousemove',e=>{const rect=box.getBoundingClientRect();const x=e.clientX-rect.left;const y=e.clientY-rect.top;const centerX=rect.width/2;const centerY=rect.height/2;const rotateX=-(y-centerY)/10;const rotateY=(x-centerX)/10;photo.style.transform=`rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`});
+  box.addEventListener('mouseleave',()=>{photo.style.transform='rotateX(0) rotateY(0)'});
+</script></body>
+</html>
